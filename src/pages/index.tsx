@@ -1,6 +1,18 @@
 import Head from 'next/head'
+import { FiLogIn } from 'react-icons/fi'
+import {
+  CreatePointLink,
+  Description,
+  LandingPageContainer,
+  LandingPageContent,
+  PageHeader,
+  TextContainer,
+  Title,
+} from './styles'
 
-export default function Home() {
+import logoImg from '../assets/logo.svg'
+
+export default function LandingPage() {
   return (
     <>
       <Head>
@@ -9,7 +21,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Hello world</h1>
+      <LandingPageContainer>
+        <LandingPageContent>
+          <PageHeader>
+            <img src={logoImg.src} alt="" />
+          </PageHeader>
+
+          <TextContainer>
+            <Title>O Seu marketplace de coleta de resíduos.</Title>
+            <Description>
+              Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente
+            </Description>
+
+            <CreatePointLink href="">
+              <span>
+                <FiLogIn />
+              </span>
+              <strong>Cadastre um ponto de coleta</strong>
+            </CreatePointLink>
+          </TextContainer>
+        </LandingPageContent>
+      </LandingPageContainer>
     </>
   )
 }
